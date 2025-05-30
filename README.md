@@ -12,7 +12,7 @@ A simple Spring Boot WebFlux API that provides random advice by consuming the [A
 
 ```bash
 # Clone and navigate to project
-git clone <repository-url>
+git clone https://github.com/williambella/challenge-thortful.git
 cd advice-api
 
 # Run with Maven
