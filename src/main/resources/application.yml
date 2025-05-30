@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    web-application-type: reactive
+
+external:
+  api: "https://api.adviceslip.com"
+logging:
+  level:
+    com.thortful.adviceapi: DEBUG
+    org.springframework.web.reactive.function.client: DEBUG
+    reactor.netty.http.client: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
