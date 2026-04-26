@@ -51,6 +51,11 @@ public class AdviceServiceImpl implements AdviceService {
         try {
             log.debug("Attempting to parse JSON: {}", jsonResponse);
 
+            if (jsonResponse == null || jsonResponse.trim().isEmpty()) {
+                log.error("Received null or empty response from external API");
+                return Mono.error(new RuntimeException("External API returned empty response"));
+            }
+
             if (!jsonResponse.trim().startsWith("{")) {
                 throw new RuntimeException("Response is not JSON: " + jsonResponse);
             }
